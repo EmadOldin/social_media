@@ -11,8 +11,8 @@ class Profile(models.Model):
     # followed_by = models.ManyToManyField(
     #     "self", related_name="follow", symmetrical=False,null=True, blank=False
     # )
-    
-    # personal_id = models.IntegerField(unique=True, null=False, blank=True)
+
+    personal_id = models.IntegerField(unique=True, null=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -20,4 +20,4 @@ class Profile(models.Model):
         verbose_name_plural = "کاربران"
 
     def __str__(self):
-        return f"{self.personal_id}"
+        return f"{self.id}"

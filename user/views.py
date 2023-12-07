@@ -11,7 +11,7 @@ class UserRegister(APIView):
         first_name = request.data["first_name"]
         last_name = request.data["last_name"]
 
-        # personal_id = request.data["personal_id"]
+        personal_id = request.data["personal_id"]
         password = request.data["password"]
         user = User.objects.create_user(
             username=first_name,
@@ -24,7 +24,7 @@ class UserRegister(APIView):
             user=user,
             first_name=first_name,
             last_name=last_name,
-            # personal_id=personal_id,
+            personal_id=personal_id,
         )
 
         refresh = RefreshToken.for_user(user)
